@@ -18,7 +18,7 @@
 </header>
 
 <main>
-    <section class="container-fluid py-4">
+    <section class="container-fluid p-4">
 
         <div class="row gx-5 d-flex justify-content-center align-items-center">
         
@@ -39,7 +39,7 @@
                         <!-- Income -->
 
                         <h1 class="fs-2">Income</h1>
-                        <div>Income: <input class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text"></div>
+                        <div>Income: <input id="income-field" class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text"></div>
                         <br>
                         
                         <!-- Expenses -->
@@ -47,18 +47,19 @@
                         <h1 class="fs-2">Expenses</h1>
                         <br>
                         
-                        <div>Food: <input class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text"></div>  
+                        <div>Food: <input id="food-field" class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text"></div>  
                         <br> 
-                                        
-                        <div>Rent: <input class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type=""></div>
+
+
+                        <div>Rent: <input id="rent-field" class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type=""></div>
                         <br>
                         
-                       <div>Clothes: <input class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text" name="" id=""></div>
+                       <div>Clothes: <input id="clothes-field" class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text" name="" id=""></div>
                         <br>
                        
                         <!-- Calculate Button -->
 
-                        <button class="bg-primary border-0 text-white fw-bold px-3 py-1 rounded-3">Calculate</button>
+                        <button id="calculate-btn" class="bg-primary border-0 text-white fw-bold px-3 py-1 rounded-3">Calculate</button>
                         <br>
                         <br>
                         
@@ -71,7 +72,7 @@
                         
                         <!-- Savings -->
 
-                        <div>Save: <input class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text" size="5"> <span class="fw-bold"> % </span>  <button class="bg-primary border-0 text-white fw-bold px-3 py-1 rounded-3">Save</button></div>
+                        <div>Save: <input id="savings-field" class="bg-secondary bg-opacity-50 border border-2 border-white rounded-3" type="text" size="5"> <span class="fw-bold"> % </span>  <button id="save-btn" class="bg-primary border-0 text-white fw-bold px-3 py-1 rounded-3">Save</button></div>
                         <br>
                         <h2 class="fs-3">Saving Amount: <span>2000</span> </h2>
                         <h2 class="fs-3">Remaining Balance: <span>2500</span> </h2>
@@ -81,6 +82,8 @@
      
         </div>
     </section>
+
+   
 </main>
 
 <script src="js/app.js"></script>
