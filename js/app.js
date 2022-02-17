@@ -8,7 +8,7 @@ function getInputValue(inputId){
     
     if(isNaN(inputNumber)){
         inputField.value = "";
-        alert("Please, enter a positive number. Otherwise it doesn't work.")
+        alert("Please, enter a positive number in " + inputId + ". Otherwise it doesn't work.")
 
     }
 
