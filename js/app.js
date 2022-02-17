@@ -25,13 +25,10 @@ function getInputValue(inputId){
 // calculate total expenses
 
 function getTotalExpenses(foodExpenses, rentExpenses, clothesExpenses) {
-    const newTotalExpenses = foodExpenses + rentExpenses + clothesExpenses;
+    const totalExpensesAmount = foodExpenses + rentExpenses + clothesExpenses;
 
     const totalExpenses = document.getElementById("total-expenses");
 
-    const previousTotalExpenses = totalExpenses.innerText;
-
-    const totalExpensesAmount = parseFloat(previousTotalExpenses) + parseFloat(newTotalExpenses)
     
     totalExpenses.innerText = totalExpensesAmount;
 
@@ -44,12 +41,8 @@ function getTotalExpenses(foodExpenses, rentExpenses, clothesExpenses) {
 function updateBalance(income, totalExpensesAmount) {
     const balance = document.getElementById("total-balance");
 
-    const previousBalanceAmount = balance.innerText;
-
     if(income>=totalExpensesAmount){
-        const newBalanceAmount = income - totalExpensesAmount;
-
-        const totalBalanceAmount = parseFloat(previousBalanceAmount)  + parseFloat(newBalanceAmount);
+        const totalBalanceAmount = income - totalExpensesAmount;
 
         balance.innerText = totalBalanceAmount;
        
