@@ -3,23 +3,26 @@
 function getInputValue(inputId){
     const inputField = document.getElementById(inputId);
     const inputFieldText = inputField.value;
+
+    const inputNumber = parseFloat(inputFieldText);
     
-    if(isNaN(inputFieldText)){
+    if(isNaN(inputNumber)){
         inputField.value = "";
         alert("Please, enter a positive number. Otherwise it doesn't work.")
+
     }
+
+    else if(inputNumber<0){
+        inputField.value = "";
+        alert("Plesas, enter a positive number in " + inputId)
+
+    }
+
     else{
-        const inputNumber = parseFloat(inputFieldText);
-        // inputField.value = "";
-    
-        if(inputNumber<0){
-            alert("Plesas, enter a positive number.")
-        }
-        else{
-            return inputNumber;
-        }
-    
+        return inputNumber;
     }
+
+    
 }
 
 // calculate total expenses
@@ -40,19 +43,22 @@ function getTotalExpenses(foodExpenses, rentExpenses, clothesExpenses) {
 
 function updateBalance(income, totalExpensesAmount) {
     const balance = document.getElementById("total-balance");
-
-    if(income>=totalExpensesAmount){
-        const totalBalanceAmount = income - totalExpensesAmount;
-
-        balance.innerText = totalBalanceAmount;
-
-        return totalBalanceAmount;
-       
-    }
-
-   else{
-       alert("Total expenses is more than income.")
-   }
+   
+        if(income >= totalExpensesAmount){
+            const totalBalanceAmount = income - totalExpensesAmount;
+    
+            balance.innerText = totalBalanceAmount;
+    
+            if(totalBalanceAmount > 0){
+                return totalBalanceAmount;
+            }
+           
+        }
+    
+       else{
+           alert("Total expenses is more than income.")
+       }
+    
 }
     
 // handle calculate button event
@@ -128,14 +134,5 @@ document.getElementById("save-btn").addEventListener("click", function(){
     if(remainingBalanceAmount >= 0){
         remainingBalance.innerText = remainingBalanceAmount;
     }
-
-    
-
-
-    
-    
-    
-    
-
     
 })
