@@ -45,6 +45,8 @@ function updateBalance(income, totalExpensesAmount) {
         const totalBalanceAmount = income - totalExpensesAmount;
 
         balance.innerText = totalBalanceAmount;
+
+        return totalBalanceAmount;
        
     }
 
@@ -101,8 +103,7 @@ document.getElementById("save-btn").addEventListener("click", function(){
 
     const balance = updateBalance(income, totalExpensesAmount);
 
-
-    // savings
+    // saving amount calculation
     
     const savingsPercentage = getInputValue("savings-field");
 
@@ -110,8 +111,30 @@ document.getElementById("save-btn").addEventListener("click", function(){
 
     const savingAmount = income * (savingsPercentage / 100);
 
-    savings.innerText = savingAmount;
+    if(savingAmount <= balance){
+        savings.innerText = savingAmount;
+    }
+    else{
+        alert("You don't have enough amount of money for saving.")
+    }
 
+
+    // remaining balance calculation
+
+    const remainingBalance = document.getElementById("remaining-balance");
+
+    const remainingBalanceAmount = balance - savingAmount;
+
+    if(remainingBalanceAmount >= 0){
+        remainingBalance.innerText = remainingBalanceAmount;
+    }
+
+    
+
+
+    
+    
+    
     
 
     
