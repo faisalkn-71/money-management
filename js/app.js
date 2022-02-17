@@ -10,7 +10,7 @@ function getInputValue(inputId){
     }
     else{
         const inputNumber = parseFloat(inputFieldText);
-        inputField.value = "";
+        // inputField.value = "";
     
         if(inputNumber<0){
             alert("Plesas, enter a positive number.")
@@ -108,9 +108,9 @@ document.getElementById("save-btn").addEventListener("click", function(){
 
     const savings = document.getElementById("saving-amount");
 
-    const savingAmount = balance * (savingsPercentage / 100);
+    const savingAmount = income * (savingsPercentage / 100);
 
-    console.log(savingAmount)
+    savings.innerText = savingAmount;
 
     
 
